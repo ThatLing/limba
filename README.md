@@ -6,8 +6,8 @@ Control flow between function calls is fairly easy to trace in normal binaries.
 <details>
 <summary>Pre-obfuscation pictures</summary>
  
-![image](https://github.com/ThatLing/limba/assets/24573384/edeed1ee-b6cf-43d4-8f18-651e1194d9db)  
-![image](https://github.com/ThatLing/limba/assets/24573384/fe62c45a-1a0f-4d3e-8dcc-4113f9c2b5eb)  
+![before_xref](/assets/before_xref.png)  
+![before_call](/assets/before_call.png)  
 
 </details>
 
@@ -15,9 +15,9 @@ limba will generate boilerplate code that obfuscates the actual jump address usi
 <details>
 <summary>Post-obfuscation pictures</summary>
 
-![image](https://github.com/ThatLing/limba/assets/24573384/a8269a93-f61a-4e7a-a8b7-9c6fc2a75747)  
-![image](https://github.com/ThatLing/limba/assets/24573384/796d3d9a-36c9-4151-ae8c-3a9798ab346e)  
-![image](https://github.com/ThatLing/limba/assets/24573384/3ad4b009-e145-49c0-8fa2-0e11f7af1b23)  
+![after_call](/assets/after_call.png)  
+![after_call](/assets/after_call.png)  
+![after_mba](/assets/after_mba.png)  
 
 </details>
 
