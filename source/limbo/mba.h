@@ -16,6 +16,8 @@
 * limitations under the License.
 */
 
+#include <intrin.h> // _ReturnAddress
+
 #ifdef DEBUG
 	#define LIMBO_OBFUSCATED_FUNC(ret, name, ...) \
 		ret name(__VA_ARGS__)

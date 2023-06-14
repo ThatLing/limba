@@ -73,6 +73,8 @@ namespace limbo
 			);
 
 			return loaded_value;
+#elif defined(_MSC_VER)
+			return value;
 #else
 			#error "Unsupported compiler"
 #endif
