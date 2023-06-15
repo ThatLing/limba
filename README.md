@@ -15,7 +15,7 @@ limba will generate boilerplate code that obfuscates the actual jump address usi
 <details>
 <summary>Post-obfuscation pictures</summary>
 
-![after_call](/assets/after_call.png)  
+![after_xref](/assets/after_xref.png)  
 ![after_call](/assets/after_call.png)  
 ![after_mba](/assets/after_mba.png)  
 
