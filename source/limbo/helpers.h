@@ -42,37 +42,6 @@ namespace limbo
 			);
 
 			return value;
-#elif _MSC_VER
-			// Handles MSVC
-			volatile T reg = value;
-			return reg;
-#else
-			#error "Unsupported compiler"
-#endif
-		}
-
-		//
-		// Forces the compiler to generate code to load an immediate value into a register
-		//
-		template<typename T>
-		LIMBO_FORCEINLINE constexpr T load_from_reg_imm(T value) noexcept
-		{
-#if defined(__clang__) || defined(__GNUC__)
-			//
-			// Generated code isn't perfect (see below), but it's the best I found so far.
-			//
-			// lea rax, loc_1400019B7
-			// mov rax, rax
-			//
-			std::uintptr_t loaded_value;
-
-			asm(
-				"mov %1, %0"
-				: "=r" (loaded_value)
-				: "r" (value)
-			);
-
-			return loaded_value;
 #else
 			#error "Unsupported compiler"
 #endif

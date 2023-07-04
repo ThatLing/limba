@@ -31,12 +31,12 @@
 	#define _LIMBO_OBFUSCATED_BODY(name)															\
 		template <class... Args>																	\
 		LIMBO_NOINLINE decltype(auto) name(Args&&... args) {										\
-			/* NOTE: This will fail and leak the target address if the address isn't valid. */		\
+			/* NOTE: This will fail and emit the original target address if the address isn't valid. */	\
 			constexpr std::uintptr_t key = limbo::rng::random_int<__COUNTER__>(-0x1000, 0x1000);	\
 			/* NOTE: Addition is the only operation that didn't break this from my testing */		\
 			const std::uintptr_t shifted_addr = reinterpret_cast<std::uintptr_t>(&LIMBO_CAT(name, __LINE__)) + key; \
 																									\
-			const auto loaded_addr = limbo::helpers::load_from_reg_imm(shifted_addr);				\
+			const auto loaded_addr = limbo::helpers::load_from_reg(shifted_addr);					\
 																									\
 			/* opaque predicate to hinder analysis TODO: better predicates */						\
 			const auto ret_addr = reinterpret_cast<std::uintptr_t>(_ReturnAddress());				\

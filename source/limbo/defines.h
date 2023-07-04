@@ -29,9 +29,6 @@
 	#if defined(__clang__) || defined(__GNUC__)
 		#define LIMBO_FORCEINLINE __attribute__((always_inline)) inline
 		#define LIMBO_NOINLINE __attribute__((noinline))
-	#elif _MSC_VER
-		#define LIMBO_FORCEINLINE __forceinline
-		#define LIMBO_NOINLINE __declspec(noinline)
 	#else
 		#error "Unsupported compiler"
 	#endif
